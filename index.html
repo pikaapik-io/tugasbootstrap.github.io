@@ -5,140 +5,164 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Smart Farming Dashboard</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
-      background-color: #f8f9fa;
+      background-color: #121212; /* Warna latar belakang hitam gelap */
+      color: #e0e0e0; /* Warna teks umum */
+    }
+    .container {
+      margin-top: 40px;
     }
     .dashboard-title {
-      margin: 20px 0;
       font-weight: bold;
+      color: #4CAF50; /* Warna hijau untuk judul */
+      text-align: center;
+      margin-bottom: 40px;
     }
     .card {
       border-radius: 15px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      height: 130px;
+      background-color: #1e1e1e; /* Warna latar belakang kartu yang sedikit lebih terang */
+      border: 1px solid #333;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      height: 150px; /* Menyesuaikan tinggi kartu */
       display: flex;
       justify-content: center;
       align-items: center;
+      transition: transform 0.2s; /* Efek hover */
+    }
+    .card:hover {
+      transform: translateY(-5px); /* Kartu naik sedikit saat di-hover */
+      box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+    }
+    .card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #61DAFB; /* Warna ikon */
     }
     .card-title {
       font-size: 0.9rem;
       font-weight: bold;
+      color: #b0b0b0; /* Warna teks judul kartu */
     }
     .card-value {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       font-weight: bold;
       margin: 0;
+      color: #fff; /* Warna nilai utama */
+    }
+    .progress-bar {
+      background-color: #4CAF50 !important; /* Warna progress bar yang seragam */
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h3 class="dashboard-title">Smart Farming</h3>
+    <h3 class="dashboard-title">Smart Farming Dashboard 👨‍🌾</h3>
     <div class="row row-cols-1 row-cols-md-5 g-4">
       
-      <!-- Kelembaban -->
       <div class="col">
-        <div class="card border-primary text-center">
-          <div>
-            <h6 class="card-title text-primary">Kelembaban (RH)</h6>
+        <div class="card text-center">
+          <div class="card-body">
+            <i class="fas fa-water card-icon text-primary"></i>
+            <h6 class="card-title">Kelembaban (RH)</h6>
             <p class="card-value text-primary">54 %</p>
           </div>
         </div>
       </div>
 
-      <!-- TDS -->
       <div class="col">
-        <div class="card border-success text-center">
-          <div>
-            <h6 class="card-title text-success">TDS</h6>
-            <p class="card-value">400 ppm</p>
+        <div class="card text-center">
+          <div class="card-body">
+            <i class="fas fa-flask card-icon text-success"></i>
+            <h6 class="card-title">TDS</h6>
+            <p class="card-value text-success">400 ppm</p>
           </div>
         </div>
       </div>
 
-      <!-- Kekeruhan -->
       <div class="col">
-        <div class="card border-info text-center">
-          <div>
-            <h6 class="card-title text-info">Kekeruhan (Turbid)</h6>
-            <p class="card-value">18 NTU</p>
-            <div class="progress" style="height:6px;">
+        <div class="card text-center">
+          <div class="card-body">
+            <i class="fas fa-cloud card-icon text-info"></i>
+            <h6 class="card-title">Kekeruhan (Turbid)</h6>
+            <p class="card-value text-info">18 NTU</p>
+            <div class="progress" style="height:6px; margin-top: 10px;">
               <div class="progress-bar bg-info" role="progressbar" style="width: 40%;"></div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Temperatur Air -->
       <div class="col">
-        <div class="card border-warning text-center">
-          <div>
-            <h6 class="card-title text-warning">Temperatur Air (WTEMP)</h6>
-            <p class="card-value">25 °C</p>
+        <div class="card text-center">
+          <div class="card-body">
+            <i class="fas fa-thermometer-half card-icon text-warning"></i>
+            <h6 class="card-title">Temperatur Air (WTEMP)</h6>
+            <p class="card-value text-warning">25 °C</p>
           </div>
         </div>
       </div>
 
-      <!-- Aliran Air -->
       <div class="col">
-        <div class="card border-danger text-center">
-          <div>
-            <h6 class="card-title text-danger">Aliran Air (WFlow)</h6>
-            <p class="card-value">34</p>
+        <div class="card text-center">
+          <div class="card-body">
+            <i class="fas fa-tachometer-alt card-icon text-danger"></i>
+            <h6 class="card-title">Aliran Air (WFlow)</h6>
+            <p class="card-value text-danger">34</p>
           </div>
         </div>
       </div>
 
-      <!-- Oksigen Terlarut -->
       <div class="col">
-        <div class="card border-primary text-center">
-          <div>
-            <h6 class="card-title text-primary">Oksigen Terlarut (Diss.Oxygen)</h6>
-            <p class="card-value">10 ppm</p>
+        <div class="card text-center">
+          <div class="card-body">
+            <i class="fas fa-air-freshener card-icon text-primary"></i>
+            <h6 class="card-title">Oksigen Terlarut (Diss.Oxygen)</h6>
+            <p class="card-value text-primary">10 ppm</p>
           </div>
         </div>
       </div>
 
-      <!-- Intensitas Cahaya -->
       <div class="col">
-        <div class="card border-success text-center">
-          <div>
-            <h6 class="card-title text-success">Intensitas Cahaya (Lux)</h6>
-            <p class="card-value">100 Lux</p>
+        <div class="card text-center">
+          <div class="card-body">
+            <i class="fas fa-sun card-icon text-success"></i>
+            <h6 class="card-title">Intensitas Cahaya (Lux)</h6>
+            <p class="card-value text-success">100 Lux</p>
           </div>
         </div>
       </div>
 
-      <!-- Temperatur Udara -->
       <div class="col">
-        <div class="card border-info text-center">
-          <div>
-            <h6 class="card-title text-info">Temperatur Udara (AMTemp)</h6>
-            <p class="card-value">34 °C</p>
-            <div class="progress" style="height:6px;">
+        <div class="card text-center">
+          <div class="card-body">
+            <i class="fas fa-temperature-low card-icon text-info"></i>
+            <h6 class="card-title">Temperatur Udara (AMTemp)</h6>
+            <p class="card-value text-info">34 °C</p>
+            <div class="progress" style="height:6px; margin-top: 10px;">
               <div class="progress-bar bg-info" role="progressbar" style="width: 70%;"></div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- EC -->
       <div class="col">
-        <div class="card border-warning text-center">
-          <div>
-            <h6 class="card-title text-warning">EC</h6>
-            <p class="card-value">2</p>
+        <div class="card text-center">
+          <div class="card-body">
+            <i class="fas fa-bolt card-icon text-warning"></i>
+            <h6 class="card-title">EC</h6>
+            <p class="card-value text-warning">2</p>
           </div>
         </div>
       </div>
 
-      <!-- pH -->
       <div class="col">
-        <div class="card border-danger text-center">
-          <div>
-            <h6 class="card-title text-danger">pH</h6>
-            <p class="card-value">7.1</p>
+        <div class="card text-center">
+          <div class="card-body">
+            <i class="fas fa-vial card-icon text-danger"></i>
+            <h6 class="card-title">pH</h6>
+            <p class="card-value text-danger">7.1</p>
           </div>
         </div>
       </div>
@@ -146,7 +170,6 @@
     </div>
   </div>
 
-  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
